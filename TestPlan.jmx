@@ -42,6 +42,16 @@
             <stringProp name="Argument.value">2018-05-15 15:30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">idu183</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="email" elementType="Argument">
+            <stringProp name="Argument.name">email</stringProp>
+            <stringProp name="Argument.value">nurgaleev@iwayex.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -468,39 +478,7 @@ for (j = 0; j &lt; lngth; j++)
  AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot; + N.toString() +&quot;] [index 2: &quot;+i.toString()+&quot;] [value 1: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;][value 2: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;]&quot;);
  AssertionResult.setFailure(true);
 }
-/*int[] AuditID_Price;
-int N, i;
-
-String lngth_str = vars.get(&quot;AuditID_GetPrice_matchNr&quot;);
-
-int lngth = Integer.valueOf(lngth_str);
-//OUT.println(lngth.toString());
-//OUT.println(lngth);
-
-AuditID_Price = new int[lngth];
-
-//записываем числа из массива
-for (i = 0; i &lt; lngth; i++) {
- AuditID_Price[i] = Integer.valueOf(vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString()));
-  //OUT.println(i.toString());
- }
- 
- //OUT.println(&quot;Done&quot;);	
-log.info (&quot;The example answer is &quot; + AuditID_Price);	
-
-//Проверка
-for (N = 0; N &lt; lngth; N++){
-	for (i = 0; i &lt; lngth; i++){ 
-		if (i!=N){
-	       if (AuditID_Price[N] == AuditID_Price[i]){
-		  AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot;  +N.toString() +&quot;] [index 2:&quot;  +i.toString()+&quot;] [value: &quot; +   AuditID_Price[N].toString()+&quot;][value: &quot; +AuditID_Price[i].toString()+&quot;]&quot;);
-	       AssertionResult.setFailure(true);
-	break;
-			}
-		}
-	}
-}	*/
-	</stringProp>
+</stringProp>
           </JSR223Assertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ApiCode" enabled="true">
@@ -544,7 +522,7 @@ for (N = 0; N &lt; lngth; N++){
    &quot;method&quot;:&quot;GetTrip&quot;,&#xd;
    &quot;params&quot;:{  &#xd;
       &quot;userID&quot;:${userID},&#xd;
-      &quot;password&quot;:&quot;idu183&quot;,&#xd;
+      &quot;password&quot;:&quot;${password}&quot;,&#xd;
       &quot;page&quot;:2&#xd;
       },&#xd;
    &quot;id&quot;:1&#xd;
@@ -577,6 +555,14 @@ for (N = 0; N &lt; lngth; N++){
             <stringProp name="SUBJECT">BODY</stringProp>
           </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
           <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="OrderID_GetTrip" enabled="true">
+            <stringProp name="VAR">OrderID_GetTrip</stringProp>
+            <stringProp name="JSONPATH">$..OrderID</stringProp>
+            <stringProp name="DEFAULT">AuditID_not_found</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
           <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Repetition Assertion" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
@@ -593,39 +579,7 @@ for (j = 0; j &lt; lngth; j++)
  AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot; + N.toString() +&quot;] [index 2: &quot;+i.toString()+&quot;] [value 1: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;][value 2: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;]&quot;);
  AssertionResult.setFailure(true);
 }
-/*int[] AuditID_Price;
-int N, i;
-
-String lngth_str = vars.get(&quot;AuditID_GetPrice_matchNr&quot;);
-
-int lngth = Integer.valueOf(lngth_str);
-//OUT.println(lngth.toString());
-//OUT.println(lngth);
-
-AuditID_Price = new int[lngth];
-
-//записываем числа из массива
-for (i = 0; i &lt; lngth; i++) {
- AuditID_Price[i] = Integer.valueOf(vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString()));
-  //OUT.println(i.toString());
- }
- 
- //OUT.println(&quot;Done&quot;);	
-log.info (&quot;The example answer is &quot; + AuditID_Price);	
-
-//Проверка
-for (N = 0; N &lt; lngth; N++){
-	for (i = 0; i &lt; lngth; i++){ 
-		if (i!=N){
-	       if (AuditID_Price[N] == AuditID_Price[i]){
-		  AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot;  +N.toString() +&quot;] [index 2:&quot;  +i.toString()+&quot;] [value: &quot; +   AuditID_Price[N].toString()+&quot;][value: &quot; +AuditID_Price[i].toString()+&quot;]&quot;);
-	       AssertionResult.setFailure(true);
-	break;
-			}
-		}
-	}
-}	*/
-	</stringProp>
+</stringProp>
           </JSR223Assertion>
           <hashTree/>
           <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Get price Assertion" enabled="true">
@@ -633,7 +587,7 @@ for (N = 0; N &lt; lngth; N++){
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">String jsonString =  vars.get(&quot;AuditID&quot;);
+            <stringProp name="script">String jsonString =  vars.get(&quot;AuditID_GetPrice_1&quot;);
 
 log.info (&quot;The example answer is &quot; + jsonString);	
 
@@ -649,49 +603,19 @@ log.info (&quot;The example answer is &quot; + jsonString);
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">int i, j;
-int lngth = Integer.parseInt(vars.get(&quot;AuditID_GetPrice_matchNr&quot;));
+int lngth = Integer.parseInt(vars.get(&quot;OrderID_GetTrip_matchNr&quot;));
  
-//Проверка
+//Проверка метода GetTrip
+
+log.info (&quot;The example answer is &quot; + &quot;OrderID_GetTrip&quot;);	
 for (i = 0; i &lt; lngth; i++)
 for (j = 0; j &lt; lngth; j++) 
  if (i != j)
- if (Integer.valueOf(vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())) == Integer.valueOf(vars.get(&quot;AuditID_GetPrice_&quot;+(j+1).toString()))){
- AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot; + N.toString() +&quot;] [index 2: &quot;+i.toString()+&quot;] [value 1: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;][value 2: &quot;+vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString())+&quot;]&quot;);
+ if (Integer.valueOf(vars.get(&quot;OrderID_GetTrip_&quot;+(i+1).toString())) == Integer.valueOf(vars.get(&quot;OrderID_GetTrip_&quot;+(j+1).toString()))){
+ AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot; + N.toString() +&quot;] [index 2: &quot;+i.toString()+&quot;] [value 1: &quot;+vars.get(&quot;OrderID_GetTrip_&quot;+(i+1).toString())+&quot;][value 2: &quot;+vars.get(&quot;OrderID_GetTrip_&quot;+(i+1).toString())+&quot;]&quot;);
  AssertionResult.setFailure(true);
 }
-/*int[] AuditID_Price;
-int N, i;
-
-String lngth_str = vars.get(&quot;AuditID_GetPrice_matchNr&quot;);
-
-int lngth = Integer.valueOf(lngth_str);
-//OUT.println(lngth.toString());
-//OUT.println(lngth);
-
-AuditID_Price = new int[lngth];
-
-//записываем числа из массива
-for (i = 0; i &lt; lngth; i++) {
- AuditID_Price[i] = Integer.valueOf(vars.get(&quot;AuditID_GetPrice_&quot;+(i+1).toString()));
-  //OUT.println(i.toString());
- }
- 
- //OUT.println(&quot;Done&quot;);	
-log.info (&quot;The example answer is &quot; + AuditID_Price);	
-
-//Проверка
-for (N = 0; N &lt; lngth; N++){
-	for (i = 0; i &lt; lngth; i++){ 
-		if (i!=N){
-	       if (AuditID_Price[N] == AuditID_Price[i]){
-		  AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot;  +N.toString() +&quot;] [index 2:&quot;  +i.toString()+&quot;] [value: &quot; +   AuditID_Price[N].toString()+&quot;][value: &quot; +AuditID_Price[i].toString()+&quot;]&quot;);
-	       AssertionResult.setFailure(true);
-	break;
-			}
-		}
-	}
-}	*/
-	</stringProp>
+</stringProp>
           </JSR223Assertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ApiCode" enabled="true">
@@ -737,7 +661,7 @@ for (N = 0; N &lt; lngth; N++){
    &quot;method&quot;:&quot;GetTrip&quot;,&#xd;
    &quot;params&quot;:{  &#xd;
       &quot;userID&quot;:${userID},&#xd;
-      &quot;password&quot;:&quot;idu183&quot;,&#xd;
+      &quot;password&quot;:&quot;${password}&quot;,&#xd;
       &quot;page&quot;:2&#xd;
       },&#xd;
    &quot;id&quot;:1&#xd;
@@ -747,8 +671,8 @@ for (N = 0; N &lt; lngth; N++){
    &quot;params&quot;:{&#xd;
       &quot;priceID&quot;:8327,&#xd;
       &quot;Price&quot;:12000,&#xd;
-      &quot;dateArrival&quot;: &quot;2018-02-15 11:30&quot;,&#xd;
-      &quot;dateDeparture&quot;: &quot;2018-02-15 15:30&quot;,&#xd;
+      &quot;dateArrival&quot;: &quot;${dateArrival}&quot;,&#xd;
+      &quot;dateDeparture&quot;: &quot;${dateDeparture}&quot;,&#xd;
       &quot;locationAddress&quot;:&quot;Petrovka 13&quot;,&#xd;
       &quot;passengers&quot;:[&#xd;
           {&#xd;
@@ -901,7 +825,7 @@ for (j = 0; j &lt; lngth; j++)
         &quot;email&quot;: &quot;nurgaleev@iwayex.com&quot;&#xd;
       }&#xd;
     ],&#xd;
-    &quot;userID&quot;: 12184,&#xd;
+    &quot;userID&quot;: ${userID},&#xd;
     &quot;subaddress&quot;: null,&#xd;
     &quot;departureNumber&quot;: null,&#xd;
     &quot;arrivalNumber&quot;: null,&#xd;
@@ -1007,7 +931,8 @@ for (j = 0; j &lt; lngth; j++)
    },&#xd;
 &quot;id&quot;:1&#xd;
 },&#xd;
-{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;AutoFind&quot;,&#xd;
+{&quot;jsonrpc&quot;:&quot;2.0&quot;,&#xd;
+&quot;method&quot;:&quot;AutoFind&quot;,&#xd;
    &quot;params&quot;:{&#xd;
        &quot;term&quot;:&quot;Mosc&quot;,&#xd;
        &quot;lang&quot;:&quot;ru&quot;&#xd;
@@ -1092,87 +1017,17 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate_MyCustomTimeStart_Function" enabled="false">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">var startDate = new Date();
-startDate.setDate(1); 
-startDate.setMonth(0); 
-startDate.setYear(2018);
-startDate.setHours(0);
-startDate.setMinutes(0); 
-var startDateTime = startDate.getTime(); 
-
-var endDate = new Date(); 
-endDate.setDate(31);
-endDate.setMonth(6); 
-endDate.setYear(2018);
-endDate.setHours(24); 
-endDate.setMinutes(60);
-var endDateTime = endDate.getTime();
-
-var randomDate = new Date();
-var randomDateTime = startDateTime+Math.random()*(endDateTime-startDateTime); randomDate.setTime(randomDateTime); 
-var rndDate = randomDate.getDate();
-var rndMonth = randomDate.getMonth() + 1;
-var rndYear = randomDate.getFullYear(); 
-var rndHours = randomDate.getHours(); 
-var rndMinutes = randomDate.getMinutes();
-
-if (rndDate.toString().length == 1) rndDate = &quot;0&quot; + rndDate;
-if (rndMonth.toString().length == 1) rndMonth = &quot;0&quot; + rndMonth; 
-if (rndMinutes.toString().length == 1) rndMinutes = &quot;0&quot; + rndMinutes; 
-if (rndHours.toString().length == 1) rndHours = &quot;0&quot; + rndHours;
-
-rndTime = rndYear + &quot;-&quot; + rndMonth + &quot;-&quot; + rndDate + &quot; &quot; + rndHours + &quot;:&quot; + rndMinutes; 
-
-vars.put(&quot;MyCustomTimeStart&quot;, rndTime);
-
-</stringProp>
-          <stringProp name="scriptLanguage">javascript</stringProp>
-        </JSR223Sampler>
-        <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate_MyCustomTimeEnd_Function" enabled="false">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">var startDate = new Date();
-startDate.setDate(23); 
-startDate.setMonth(1); 
-startDate.setYear(2018);
-startDate.setHours(0);
-startDate.setMinutes(0); 
-var startDateTime = startDate.getTime(); 
-
-var endDate = new Date(); 
-endDate.setDate(31);
-endDate.setMonth(7); 
-endDate.setYear(2018);
-endDate.setHours(24); 
-endDate.setMinutes(60);
-var endDateTime = endDate.getTime();
-
-var randomDate = new Date();
-var randomDateTime = startDateTime+Math.random()*(endDateTime-startDateTime); randomDate.setTime(randomDateTime); 
-var rndDate = randomDate.getDate();
-var rndMonth = randomDate.getMonth() + 1;
-var rndYear = randomDate.getFullYear(); 
-var rndHours = randomDate.getHours(); 
-var rndMinutes = randomDate.getMinutes();
-
-if (rndDate.toString().length == 1) rndDate = &quot;0&quot; + rndDate;
-if (rndMonth.toString().length == 1) rndMonth = &quot;0&quot; + rndMonth; 
-if (rndMinutes.toString().length == 1) rndMinutes = &quot;0&quot; + rndMinutes; 
-if (rndHours.toString().length == 1) rndHours = &quot;0&quot; + rndHours;
-
-rndTime = rndYear + &quot;-&quot; + rndMonth + &quot;-&quot; + rndDate + &quot; &quot; + rndHours + &quot;:&quot; + rndMinutes; 
-
-vars.put(&quot;MyCustomTimeEnd&quot;, rndTime);
-
-</stringProp>
-          <stringProp name="scriptLanguage">javascript</stringProp>
-        </JSR223Sampler>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV_AuditID_ID" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">/home/user/Documents/CSVjmeter/AuditID_ID.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">AuditID_ID</stringProp>
+        </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AddTrip_Rent" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1187,7 +1042,7 @@ vars.put(&quot;MyCustomTimeEnd&quot;, rndTime);
     &quot;priceID&quot;: 12495,&#xd;
     &quot;duration&quot;: 24000,&#xd;
     &quot;startID&quot;: 9,&#xd;
-    &quot;dateArrival&quot;: &quot;2018-05-13 14:00&quot;,&#xd;
+    &quot;dateArrival&quot;: &quot;${dateArrival}&quot;,&#xd;
     &quot;dateDeparture&quot;: null,&#xd;
     &quot;locationAddress&quot;: &quot;улица Ленина, 5&quot;,&#xd;
     &quot;passengersNumber&quot;: 1,&#xd;
@@ -1199,10 +1054,10 @@ vars.put(&quot;MyCustomTimeEnd&quot;, rndTime);
       {&#xd;
         &quot;name&quot;: &quot;Jon Snow&quot;,&#xd;
         &quot;phone&quot;: &quot;8913111111&quot;,&#xd;
-        &quot;email&quot;: &quot;nurgaleev@iwayex.com&quot;&#xd;
+        &quot;email&quot;: &quot;${email}&quot;&#xd;
       }&#xd;
     ],&#xd;
-    &quot;userID&quot;: 12184,&#xd;
+    &quot;userID&quot;: ${userID},&#xd;
     &quot;subaddress&quot;: null,&#xd;
     &quot;departureNumber&quot;: null,&#xd;
     &quot;arrivalNumber&quot;: null,&#xd;
@@ -1290,7 +1145,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
           <hashTree/>
         </hashTree>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ApproveTrip" enabled="false">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ApproveTrip" enabled="true">
           <stringProp name="ForeachController.inputVal">transactionID_rent</stringProp>
           <stringProp name="ForeachController.returnVal">transactionID_rent</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1303,8 +1158,8 @@ log.info (&quot;The example answer is &quot; + jsonString);
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;ApproveTrip&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
 	&quot;transaction&quot;:${transactionID_rent}&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -1387,7 +1242,7 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetTrip" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetTrip" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1397,8 +1252,8 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
    &quot;jsonrpc&quot;:&quot;2.0&quot;,&#xd;
    &quot;method&quot;:&quot;GetTrip&quot;,&#xd;
    &quot;params&quot;:{  &#xd;
-      &quot;userID&quot;:12184,&#xd;
-      &quot;password&quot;:&quot;idu183&quot;,&#xd;
+      &quot;userID&quot;:${userID},&#xd;
+      &quot;password&quot;:&quot;${password}&quot;,&#xd;
       &quot;page&quot;:2&#xd;
       },&#xd;
    &quot;id&quot;:1&#xd;
@@ -1473,7 +1328,7 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AddTrip" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AddTrip" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1484,18 +1339,18 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
  &quot;params&quot;:{&#xd;
       &quot;priceID&quot;:8327,&#xd;
       &quot;Price&quot;:12000,&#xd;
-      &quot;dateArrival&quot;: &quot;2018-02-15 11:30&quot;,&#xd;
-      &quot;dateDeparture&quot;: &quot;2018-02-15 15:30&quot;,&#xd;
+      &quot;dateArrival&quot;: &quot;${dateArrival}&quot;,&#xd;
+      &quot;dateDeparture&quot;: &quot;${dateDeparture}&quot;,&#xd;
       &quot;locationAddress&quot;:&quot;Petrovka 13&quot;,&#xd;
       &quot;passengers&quot;:[&#xd;
           {&#xd;
               &quot;phone&quot;:8911111111,&#xd;
-              &quot;email&quot;:&quot;mail121212@iwayex.com&quot;,&#xd;
+              &quot;email&quot;:&quot;${email}&quot;,&#xd;
               &quot;name&quot;:&quot;Client Name&quot;&#xd;
          },&#xd;
           {&#xd;
               &quot;phone&quot;:23554522212,&#xd;
-              &quot;email&quot;:&quot;passenger@iwayex.com&quot;,&#xd;
+              &quot;email&quot;:&quot;${email}&quot;,&#xd;
               &quot;name&quot;:&quot;Passenger Name&quot;&#xd;
           }&#xd;
       ],&#xd;
@@ -1589,14 +1444,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetUrlToFee" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetUrlToFee" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetUrlToFee&quot;,&quot;params&quot;:{&#xd;
-      &quot;userID&quot;:12184,&#xd;
+      &quot;userID&quot;:${userID},&#xd;
       &quot;transaction&quot;:${transactionID_1}&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -1672,7 +1527,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="EditTrip" enabled="false">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="EditTrip" enabled="true">
           <stringProp name="ForeachController.inputVal">transactionID</stringProp>
           <stringProp name="ForeachController.returnVal">transactionID</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1691,23 +1546,23 @@ log.info (&quot;The example answer is &quot; + jsonString);
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;EditTrip&quot;,&quot;params&quot;:{&#xd;
-      &quot;userID&quot;: 12184,&#xd;
-      &quot;password&quot;: &quot;idu183&quot;,&#xd;
+      &quot;userID&quot;: ${userID},&#xd;
+      &quot;password&quot;: &quot;${password}&quot;,&#xd;
       &quot;orderID&quot;: ${OrderID},&#xd;
       &quot;transaction&quot;: ${transactionID},&#xd;
-      &quot;dateArrival&quot;: &quot;2018-01-29 11:00&quot;,&#xd;
-      &quot;dateDeparture&quot;: &quot;2018-01-29 19:00&quot;,&#xd;
+      &quot;dateArrival&quot;: &quot;${dateArrival}&quot;,&#xd;
+      &quot;dateDeparture&quot;: &quot;${dateDeparture}&quot;,&#xd;
       &quot;locationAddress&quot;: &quot;МКАД&quot;,&#xd;
       &quot;destinationAddress&quot;: &quot;Красная площадь123332&quot;,&#xd;
       &quot;passengers&quot;: [&#xd;
           {&#xd;
               &quot;phone&quot;:&quot;89529525555&quot;,&#xd;
-              &quot;email&quot;:&quot;nurgaleev@iwayex.com&quot;,&#xd;
+              &quot;email&quot;:&quot;${email}&quot;,&#xd;
               &quot;name&quot;:&quot;Name Name&quot;&#xd;
          },&#xd;
           {&#xd;
               &quot;phone&quot;:&quot;89529525555&quot;,&#xd;
-              &quot;email&quot;:&quot;nurgaleev@iwayex.com&quot;,&#xd;
+              &quot;email&quot;:&quot;${email}&quot;,&#xd;
               &quot;name&quot;:&quot;Name Name&quot;&#xd;
           }&#xd;
       ],&#xd;
@@ -1788,7 +1643,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
             </hashTree>
           </hashTree>
         </hashTree>
-        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ApproveTrip" enabled="false">
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ApproveTrip" enabled="true">
           <stringProp name="ForeachController.inputVal">transactionID</stringProp>
           <stringProp name="ForeachController.returnVal">transactionID</stringProp>
           <boolProp name="ForeachController.useSeparator">true</boolProp>
@@ -1801,8 +1656,8 @@ log.info (&quot;The example answer is &quot; + jsonString);
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;ApproveTrip&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
 	&quot;transaction&quot;:${transactionID}&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -1885,17 +1740,17 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetSettingUser" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetSettingUser" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetSettingUser&quot;,&quot;params&quot;:{&#xd;
-	&quot;userID&quot;:12184,&#xd;
+	&quot;userID&quot;:${userID},&#xd;
 	&quot;versionPrefix&quot;:&quot;&quot;,&#xd;
-	&quot;currency&quot;:&quot;${CURRENCY}&quot;,&#xd;
-	&quot;lang&quot;:&quot;${LANGUAGE}&quot;,&#xd;
+	&quot;currency&quot;:&quot;RUB&quot;,&#xd;
+	&quot;lang&quot;:&quot;ru&quot;,&#xd;
 	&quot;env&quot;:&quot;live&quot;,&#xd;
 	&quot;isTestUser&quot;:false,&#xd;
 	&quot;_moduleType&quot;:&quot;old&quot;,&#xd;
@@ -1964,15 +1819,15 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TimeWithoutPenalty" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TimeWithoutPenalty" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;TimeWithoutPenalty&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
 	&quot;transaction&quot;:${transactionID},&#xd;
 	&quot;orderID&quot;: ${OrderID}&#xd;
   },&#xd;
@@ -2039,7 +1894,7 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPrice" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPrice" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2113,14 +1968,14 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetWidget" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetWidget" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetWidget&quot;,&quot;params&quot;:{&#xd;
-	&quot;userID&quot;:12184,&#xd;
+	&quot;userID&quot;:${userID},&#xd;
 	&quot;versionPrefix&quot;:&quot;&quot;,&#xd;
 	&quot;currency&quot;:&quot;RUB&quot;,&#xd;
 	&quot;lang&quot;:&quot;ru&quot;,&#xd;
@@ -2276,7 +2131,7 @@ vars.put (&quot;CheckTransaction&quot;, jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPriceIATA" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPriceIATA" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2349,13 +2204,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetAllowableIATACode" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetAllowableIATACode" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetAllowableIATACode&quot;, &#xd;
+                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&#xd;
+&quot;method&quot;:&quot;GetAllowableIATACode&quot;, &#xd;
   &quot;params&quot;:{&#xd;
   	&quot;getPlaceID&quot;:true&#xd;
   }, &#xd;
@@ -2422,7 +2278,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="BatchReservations" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="BatchReservations" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2432,38 +2288,38 @@ log.info (&quot;The example answer is &quot; + jsonString);
 	&quot;data&quot;:[&#xd;
   		{&#xd;
   			&quot;priceID&quot;:7228, &#xd;
-  			&quot;dateArrival&quot;: &quot;2018-05-28 07:00&quot;,&#xd;
-  			&quot;dateDeparture&quot;: &quot;2018-05-28 12:00&quot;, &#xd;
+  			&quot;dateArrival&quot;: &quot;${dateArrival}&quot;,&#xd;
+  			&quot;dateDeparture&quot;: &quot;${dateDeparture}&quot;, &#xd;
   			&quot;locationAddress&quot;:&quot;locationAddress-6&quot;, &#xd;
   			&quot;passengers&quot;:[&#xd;
   				{&#xd;
   					&quot;phone&quot;:&quot;89529525252&quot;, &#xd;
-  					&quot;email&quot;:&quot;email@email.com&quot;, &#xd;
+  					&quot;email&quot;:&quot;${email}&quot;, &#xd;
   					&quot;name&quot;:&quot;Name Name&quot;&#xd;
   				}, &#xd;
   				{&#xd;
   					&quot;phone&quot;:&quot;89529525252&quot;, &#xd;
-  					&quot;email&quot;:&quot;email@email.com&quot;, &#xd;
+  					&quot;email&quot;:&quot;${email}&quot;, &#xd;
   					&quot;name&quot;:&quot;Name Name&quot;&#xd;
   				}&#xd;
   			], &#xd;
-  			&quot;userID&quot;:12184,&#xd;
+  			&quot;userID&quot;:${userID},&#xd;
   			&quot;arrivalNumber&quot;:&quot;arrivalNumber&quot;, &#xd;
   			&quot;lang&quot;:&quot;en&quot;, &#xd;
   			&quot;currency&quot;:&quot;EUR&quot;&#xd;
   		},&#xd;
   		{&#xd;
   			&quot;priceID&quot;:6942, &#xd;
-  			&quot;dateArrival&quot;: &quot;2018-06-17 07:00&quot;, &#xd;
+  			&quot;dateArrival&quot;: &quot;${dateArrival}&quot;, &#xd;
   			&quot;passengers&quot;:[&#xd;
   				{&#xd;
   					&quot;phone&quot;:&quot;89529525252&quot;, &#xd;
-  					&quot;email&quot;:&quot;email@email.com&quot;, &#xd;
+  					&quot;email&quot;:&quot;${email}&quot;, &#xd;
   					&quot;name&quot;:&quot;Name1234 Name&quot;&#xd;
   				}, &#xd;
   				{&#xd;
   					&quot;phone&quot;:&quot;89529525252&quot;, &#xd;
-  					&quot;email&quot;:&quot;email@email.com&quot;, &#xd;
+  					&quot;email&quot;:&quot;${email}&quot;, &#xd;
   					&quot;name&quot;:&quot;Name1234 Name&quot;&#xd;
   				}&#xd;
   			], &#xd;
@@ -2554,15 +2410,15 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ApproveTrip_BR " enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ApproveTrip_BR " enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;ApproveTrip&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
 	&quot;transaction&quot;:${transactionID_BR_1}&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -2644,15 +2500,15 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CancellationOrder" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CancellationOrder" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;CancellationOrder&quot;,&quot;params&quot;:{&#xd;
-      &quot;userID&quot;:12184,&#xd;
-      &quot;password&quot;:&quot;idu183&quot;,&#xd;
+      &quot;userID&quot;:${userID},&#xd;
+      &quot;password&quot;:&quot;${password}&quot;,&#xd;
       &quot;transaction&quot;:${transactionIDEdit_1},&#xd;
       &quot;orderID&quot;:${OrderIDEdit_1}&#xd;
   },&#xd;
@@ -2719,14 +2575,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetParamsToChange" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetParamsToChange" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetParamsToChange&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
      &quot;transaction&quot;:${transactionID_1},&#xd;
      &quot;orderID&quot;:${OrderID_1}&#xd;
   },&#xd;
@@ -2793,13 +2649,15 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CheckAllowedTimeOrde" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CheckAllowedTimeOrde" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;CheckAllowedTimeOrder&quot;,&quot;params&quot;:{&#xd;
+                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&#xd;
+&quot;method&quot;:&quot;CheckAllowedTimeOrder&quot;,&#xd;
+&quot;params&quot;:{&#xd;
   		&quot;priceAuditID&quot;: ${AuditID_ID}&#xd;
   		},&#xd;
 &quot;id&quot;:1}&#xd;
@@ -2859,7 +2717,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
             <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug " enabled="false">
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug " enabled="true">
             <boolProp name="displayJMeterProperties">false</boolProp>
             <boolProp name="displayJMeterVariables">true</boolProp>
             <boolProp name="displaySamplerProperties">false</boolProp>
@@ -2867,7 +2725,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetAllowablePlacesTypes" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetAllowablePlacesTypes" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2942,16 +2800,16 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPathToVoucher" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPathToVoucher" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetPathToVoucher&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
-	&quot;transaction&quot;: 276411848&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
+	&quot;transaction&quot;: ${transactionID_BR_1}&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3026,16 +2884,16 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SendVoucher" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SendVoucher" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;SendVoucher&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
-  	&quot;password&quot;:&quot;idu183&quot;,&#xd;
-  	&quot;transaction&quot;: 882114731,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
+  	&quot;password&quot;:&quot;${password}&quot;,&#xd;
+  	&quot;transaction&quot;: ${transactionID_BR_2},&#xd;
 	&quot;sendParams&quot;:{&#xd;
           &quot;SendClientVoucher&quot;: false,&#xd;
           &quot;SendAdminVoucher&quot;: false,&#xd;
@@ -3116,14 +2974,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCountries" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCountries" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetCountries&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
   	&quot;lang&quot;:&quot;en&quot;&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -3192,14 +3050,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetRegions" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetRegions" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetRegions&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
   	&quot;lang&quot;:&quot;en&quot;&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -3276,14 +3134,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCities" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCities" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetCities&quot;,&quot;params&quot;:{&#xd;
-  	&quot;userID&quot;:12184,&#xd;
+  	&quot;userID&quot;:${userID},&#xd;
   	&quot;lang&quot;:&quot;en&quot;&#xd;
   },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -3368,14 +3226,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceFromCity" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceFromCity" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetPlaceFromCity&quot;,&quot;params&quot;:{&#xd;
-      &quot;userID&quot;:12184,&#xd;
+      &quot;userID&quot;:${userID},&#xd;
       &quot;cityID&quot;:${CityID_5},&#xd;
       &quot;lang&quot;:&quot;en&quot;&#xd;
   },&#xd;
@@ -3453,14 +3311,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceFromPlace" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceFromPlace" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetPlaceFromPlace&quot;,&quot;params&quot;:{&#xd;
-      &quot;userID&quot;:12184,&#xd;
+      &quot;userID&quot;:${userID},&#xd;
       &quot;startID&quot;:8&#xd;
     },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -3537,7 +3395,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetMaskReservation" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetMaskReservation" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3671,13 +3529,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceResponsibilityRent" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetPlaceResponsibilityRent" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;GetPlaceResponsibilityRent&quot;,&#xd;
+                <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&#xd;
+&quot;method&quot;:&quot;GetPlaceResponsibilityRent&quot;,&#xd;
    &quot;params&quot;:{&#xd;
        &quot;term&quot;:&quot;Novos&quot;&#xd;
        },&#xd;
@@ -3747,7 +3606,7 @@ log.info (&quot;The example answer is &quot; + jsonString);
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SetRegularClients" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SetRegularClients" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3755,8 +3614,8 @@ log.info (&quot;The example answer is &quot; + jsonString);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;SetRegularClients&quot;,&#xd;
    &quot;params&quot;:{&#xd;
-       &quot;userID&quot;:12184,&#xd;
-       &quot;password&quot;:&quot;idu183&quot;,&#xd;
+       &quot;userID&quot;:${userID},&#xd;
+       &quot;password&quot;:&quot;${password}&quot;,&#xd;
        &quot;orderID&quot;:${OrderID_1}&#xd;
    },&#xd;
 &quot;id&quot;:1}</stringProp>
@@ -3792,14 +3651,14 @@ log.info (&quot;The example answer is &quot; + jsonString);
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">String jsonString =  vars.get(&quot;ClientID_SetRegularClients_1&quot;);
+            <stringProp name="script">String jsonString =  vars.get(&quot;Phone_SetRegularClients_1&quot;);
 //String jsonString1 =  vars.get(&quot;Title_GetCountries_1&quot;);
 
 log.info (&quot;The example answer is &quot; + jsonString);	
 //log.info (&quot;The example answer is &quot; + jsonString1);	
 
 
-	if 	(jsonString != &quot;8911111111&quot;){
+	if 	(jsonString != &quot;89529525555&quot;){
 		AssertionResult.setFailureMessage(&quot;Method does not work&quot;);
 	    	AssertionResult.setFailure(true); 
 	}
@@ -3851,18 +3710,6 @@ log.info (&quot;The example answer is &quot; + jsonString);
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">true</boolProp>
           <stringProp name="variableNames">PriceID,ReverseID,AuditID,Date,ServiceID,Price,StartID,FinishID,StartTypeID,FinishTypeID,SortFT,CarClassID,Distance,TravelTime,AllowableTime,CancellationTime,MinDuration,CarDeliveranceFee,Threshold,Discount,AllowableSubaddress,CoefSubaddress,DoerCityID,Active,MinimalPrice,DeliveryCosts,EnableKM,PriceCurrency,TPCurrency,PriceLevel</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV_AuditID_ID" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">/home/user/Documents/CSVjmeter/AuditID_ID1.csv</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">true</boolProp>
-          <stringProp name="variableNames">AuditID_ID</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV_Currency" enabled="true">
@@ -4582,6 +4429,88 @@ log.info (&quot;The example answer is &quot; + jsonString);
           <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
         </ProxyControl>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate_MyCustomTimeStart_Function" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">var startDate = new Date();
+startDate.setDate(1); 
+startDate.setMonth(0); 
+startDate.setYear(2018);
+startDate.setHours(0);
+startDate.setMinutes(0); 
+var startDateTime = startDate.getTime(); 
+
+var endDate = new Date(); 
+endDate.setDate(31);
+endDate.setMonth(6); 
+endDate.setYear(2018);
+endDate.setHours(24); 
+endDate.setMinutes(60);
+var endDateTime = endDate.getTime();
+
+var randomDate = new Date();
+var randomDateTime = startDateTime+Math.random()*(endDateTime-startDateTime); randomDate.setTime(randomDateTime); 
+var rndDate = randomDate.getDate();
+var rndMonth = randomDate.getMonth() + 1;
+var rndYear = randomDate.getFullYear(); 
+var rndHours = randomDate.getHours(); 
+var rndMinutes = randomDate.getMinutes();
+
+if (rndDate.toString().length == 1) rndDate = &quot;0&quot; + rndDate;
+if (rndMonth.toString().length == 1) rndMonth = &quot;0&quot; + rndMonth; 
+if (rndMinutes.toString().length == 1) rndMinutes = &quot;0&quot; + rndMinutes; 
+if (rndHours.toString().length == 1) rndHours = &quot;0&quot; + rndHours;
+
+rndTime = rndYear + &quot;-&quot; + rndMonth + &quot;-&quot; + rndDate + &quot; &quot; + rndHours + &quot;:&quot; + rndMinutes; 
+
+vars.put(&quot;MyCustomTimeStart&quot;, rndTime);
+
+</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate_MyCustomTimeEnd_Function" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">var startDate = new Date();
+startDate.setDate(23); 
+startDate.setMonth(1); 
+startDate.setYear(2018);
+startDate.setHours(0);
+startDate.setMinutes(0); 
+var startDateTime = startDate.getTime(); 
+
+var endDate = new Date(); 
+endDate.setDate(31);
+endDate.setMonth(7); 
+endDate.setYear(2018);
+endDate.setHours(24); 
+endDate.setMinutes(60);
+var endDateTime = endDate.getTime();
+
+var randomDate = new Date();
+var randomDateTime = startDateTime+Math.random()*(endDateTime-startDateTime); randomDate.setTime(randomDateTime); 
+var rndDate = randomDate.getDate();
+var rndMonth = randomDate.getMonth() + 1;
+var rndYear = randomDate.getFullYear(); 
+var rndHours = randomDate.getHours(); 
+var rndMinutes = randomDate.getMinutes();
+
+if (rndDate.toString().length == 1) rndDate = &quot;0&quot; + rndDate;
+if (rndMonth.toString().length == 1) rndMonth = &quot;0&quot; + rndMonth; 
+if (rndMinutes.toString().length == 1) rndMinutes = &quot;0&quot; + rndMinutes; 
+if (rndHours.toString().length == 1) rndHours = &quot;0&quot; + rndHours;
+
+rndTime = rndYear + &quot;-&quot; + rndMonth + &quot;-&quot; + rndDate + &quot; &quot; + rndHours + &quot;:&quot; + rndMinutes; 
+
+vars.put(&quot;MyCustomTimeEnd&quot;, rndTime);
+
+</stringProp>
+          <stringProp name="scriptLanguage">javascript</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="WorkBench Test Fragment" enabled="false"/>
       <hashTree>
@@ -4666,6 +4595,74 @@ log.info (&quot;The example answer is &quot; + jsonString);
             <boolProp name="displayJMeterProperties">false</boolProp>
             <boolProp name="displayJMeterVariables">true</boolProp>
             <boolProp name="displaySamplerProperties">false</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="New_Api_Test" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get_Price" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://iway.ru/transnextgen/v1/prices?start_place_point=55.035705, 82.896254&amp;finish_place_point=(55.029283,82.926286) </stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="Price_GetPrice" enabled="true">
+            <stringProp name="VAR">Price_GetPrice</stringProp>
+            <stringProp name="JSONPATH">$..Price</stringProp>
+            <stringProp name="DEFAULT">Price_not_found</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Assertion_AuditID_GetPrice" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">int i, j;
+int lngth = Integer.parseInt(vars.get(&quot;Price_GetPrice_matchNr&quot;));
+ 
+//Проверка
+for (i = 0; i &lt; lngth; i++)
+for (j = 0; j &lt; lngth; j++) 
+ if (i != j)
+ if (Integer.valueOf(vars.get(&quot;Price_GetPrice_&quot;+(i+1).toString())) == Integer.valueOf(vars.get(&quot;Price_GetPrice_&quot;+(j+1).toString()))){
+ AssertionResult.setFailureMessage(&quot;Fail: [index 1: &quot; + N.toString() +&quot;] [index 2: &quot;+i.toString()+&quot;] [value 1: &quot;+vars.get(&quot;Price_GetPrice_&quot;+(i+1).toString())+&quot;][value 2: &quot;+vars.get(&quot;Price_GetPrice_&quot;+(i+1).toString())+&quot;]&quot;);
+ AssertionResult.setFailure(true);
+}
+</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug " enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
             <boolProp name="displaySystemProperties">false</boolProp>
           </DebugPostProcessor>
           <hashTree/>
